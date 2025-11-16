@@ -1,6 +1,6 @@
 ---
 import NumberCard from "./NumberCard.astro";
-const TIMESTAMP_END = new Date("2025-12-25T00:00:00").getTime();
+const { TIMESTAMP_END } = Astro.props;
 ---
 
 <section
@@ -24,6 +24,7 @@ const TIMESTAMP_END = new Date("2025-12-25T00:00:00").getTime();
     <span>SEGUNDOS</span>
   </NumberCard>
 </section>
+<section id="its-time"></section>
 
 <script>
   const $ = (s: string) => document.querySelector(s);
@@ -50,7 +51,22 @@ const TIMESTAMP_END = new Date("2025-12-25T00:00:00").getTime();
     function updateCountdown() {
       const now = Date.now();
       const distance = date - now;
-      if (distance < 0) return;
+      if (distance < 0) {
+        if (!timestamp) return;
+        const dateEnd = new Date(+timestamp);
+        if (dateEnd.getDate() == new Date().getDate() && $countdown) {
+          $countdown.className = "hidden";
+          const $itsTime = $("#its-time");
+          if ($itsTime instanceof HTMLElement) {
+            $itsTime.innerHTML = `
+            <div class="flex flex-col border-1 border-gray-400 p-4 gap-4 justify-center items-center  rounded">
+            <h2 class="text-4xl text-[#D52941] font-bold text-center">🎄 ¡FELIZ NAVIDAD PARA TODOS! 🎄</h2>
+            <p class="text-center">¡El gran día ha llegado! Que esta Navidad esté llena de alegría, amor y momentos inolvidables junto a tus seres queridos.</p>
+            </div>
+            `;
+          }
+        }
+      }
       if ($days instanceof HTMLElement) {
         $days.innerText = formatTime(distance / DAYS);
       }
