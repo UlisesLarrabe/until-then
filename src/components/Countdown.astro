@@ -1,0 +1,69 @@
+---
+import NumberCard from "./NumberCard.astro";
+const TIMESTAMP_END = new Date("2025-12-25T00:00:00").getTime();
+---
+
+<section data-date={TIMESTAMP_END} class="grid grid-cols-4 gap-2 max-w-3xl">
+  <NumberCard>
+    <span class="text-5xl font-bold" data-days>00</span>
+    <span>DÍAS</span>
+  </NumberCard>
+  <NumberCard>
+    <span class="text-5xl font-bold" data-hours>00</span>
+    <span>HORAS</span>
+  </NumberCard>
+  <NumberCard>
+    <span class="text-5xl font-bold" data-minutes>00</span>
+    <span>MINUTOS</span>
+  </NumberCard>
+  <NumberCard>
+    <span class="text-5xl font-bold" data-seconds>00</span>
+    <span>SEGUNDOS</span>
+  </NumberCard>
+</section>
+
+<script>
+  const $ = (s: string) => document.querySelector(s);
+  const SECONDS = 1000;
+  const MINUTES = SECONDS * 60;
+  const HOURS = MINUTES * 60;
+  const DAYS = HOURS * 24;
+
+  function init() {
+    const $countdown = $("[data-date]");
+    if (!$countdown) return;
+    const $days = $countdown.querySelector("[data-days]");
+    const $hours = $countdown.querySelector("[data-hours]");
+    const $minutes = $countdown.querySelector("[data-minutes]");
+    const $seconds = $countdown.querySelector("[data-seconds]");
+    const timestamp = $countdown.getAttribute("data-date");
+    if (!timestamp) return;
+    const date = new Date(+timestamp).getTime();
+
+    function formatTime(time: number) {
+      return Math.floor(time).toString().padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = date - now;
+      if (distance < 0) return;
+      if ($days instanceof HTMLElement) {
+        $days.innerText = formatTime(distance / DAYS);
+      }
+      if ($hours instanceof HTMLElement) {
+        $hours.innerText = formatTime((distance % DAYS) / HOURS);
+      }
+      if ($minutes instanceof HTMLElement) {
+        $minutes.innerText = formatTime((distance % HOURS) / MINUTES);
+      }
+      if ($seconds instanceof HTMLElement) {
+        $seconds.innerText = formatTime((distance % MINUTES) / SECONDS);
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+  }
+
+  init();
+</script>
