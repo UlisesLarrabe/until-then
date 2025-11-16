@@ -1,15 +1,11 @@
 ---
 import Countdown from "./Countdown.astro";
 const CURRENT_YEAR = new Date().getFullYear();
-const NEXT_YEAR = CURRENT_YEAR + 1;
 let TIMESTAMP_END = new Date(`${CURRENT_YEAR}-12-25T00:00:00`).getTime();
-if (new Date() >= new Date(`${CURRENT_YEAR}-12-25T00:00:00`)) {
-  TIMESTAMP_END = new Date(`${NEXT_YEAR}-12-25T00:00:00`).getTime();
-}
 ---
 
 <h1 class="text-4xl font-bold mb-4 text-center bg-[#264a38] p-2">
-  ¡Hasta <span class="text-[#D52941]">Navidad</span> de {CURRENT_YEAR}!
+  ¡Hasta <span class="text-[#D52941]">Navidad</span> de <span id="year"></span>!
 </h1>
 <p class="text-center mb-8 bg-[#264a38] p-2">Tan solo faltan...</p>
 <div class="bg-[#264a38] p-2 rounded">
@@ -20,3 +16,16 @@ if (new Date() >= new Date(`${CURRENT_YEAR}-12-25T00:00:00`)) {
     type="christmas"
   />
 </div>
+
+<script>
+  const CURRENT_YEAR = new Date().getFullYear();
+  const NEXT_YEAR = CURRENT_YEAR + 1;
+  const hasPassedChristmas =
+    new Date() > new Date(`${CURRENT_YEAR}-12-25T00:00:00`);
+  const $year = document.getElementById("year");
+  if ($year) {
+    $year.textContent = hasPassedChristmas
+      ? NEXT_YEAR.toString()
+      : CURRENT_YEAR.toString();
+  }
+</script>

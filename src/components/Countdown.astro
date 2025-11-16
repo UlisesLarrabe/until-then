@@ -53,6 +53,7 @@ const { TIMESTAMP_END, title, subtitle, type } = Astro.props;
 
   function init() {
     const $countdown = $("[data-date]");
+
     if (!$countdown) return;
     const $days = $countdown.querySelector("[data-days]");
     const $hours = $countdown.querySelector("[data-hours]");
@@ -94,7 +95,7 @@ const { TIMESTAMP_END, title, subtitle, type } = Astro.props;
           const $itsTime = $("#its-time");
           if ($itsTime instanceof HTMLElement) {
             $itsTime.className = "";
-            fireworksAnimation();
+            let interval = setInterval(() => fireworksAnimation(interval), 350);
           }
         }
       }
