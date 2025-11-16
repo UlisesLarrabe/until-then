@@ -1,9 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import "../styles/global.css";
-import Countdown from "../components/Countdown.astro";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "@layouts/Layout.astro";
+import "@styles/global.css";
+import Countdown from "@components/Countdown.astro";
 const CURRENT_YEAR = new Date().getFullYear();
 ---
 
@@ -14,7 +12,12 @@ const CURRENT_YEAR = new Date().getFullYear();
     </h1>
     <p class="text-center mb-8 bg-[#264a38] p-2">Tan solo faltan...</p>
     <div class="bg-[#264a38] p-2 rounded">
-      <Countdown TIMESTAMP_END={new Date("2025-11-16T16:00:00").getTime()} />
+      <Countdown
+        TIMESTAMP_END={new Date("2025-11-16T16:47:00").getTime()}
+        title="🎄 ¡FELIZ NAVIDAD PARA TODOS! 🎄"
+        subtitle="¡El gran día ha llegado! Que esta Navidad esté llena de alegría, amor y momentos inolvidables junto a tus seres queridos."
+        type="christmas"
+      />
     </div>
   </main>
 </Layout>

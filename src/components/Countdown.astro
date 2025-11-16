@@ -1,11 +1,12 @@
 ---
 import NumberCard from "./NumberCard.astro";
-const { TIMESTAMP_END } = Astro.props;
+const { TIMESTAMP_END, title, subtitle, type } = Astro.props;
 ---
 
 <section
   data-date={TIMESTAMP_END}
   class="grid grid-cols-4 gap-2 max-w-3xl select-none hover:cursor-crosshair"
+  data-type={type}
 >
   <NumberCard>
     <span class="text-5xl font-bold" data-days>00</span>
@@ -24,9 +25,26 @@ const { TIMESTAMP_END } = Astro.props;
     <span>SEGUNDOS</span>
   </NumberCard>
 </section>
-<section id="its-time"></section>
+<section id="its-time" class="hidden">
+  <div
+    class="flex flex-col border border-gray-400 p-4 gap-4 justify-center items-center rounded"
+  >
+    <h2 class="text-4xl text-[#D52941] font-bold text-center">
+      {title}
+    </h2>
+    <p class="text-center">
+      {subtitle}
+    </p>
+    <small class="text-gray-400"
+      >La nueva cuenta regresiva para {type == "christmas" ? "Navidad" : type} comienza
+      mañana</small
+    >
+  </div>
+</section>
 
 <script>
+  import { snowAnimation } from "@utils/snowAnimation";
+  import { fireworksAnimation } from "@utils/fireworksAnimation";
   const $ = (s: string) => document.querySelector(s);
   const SECONDS = 1000;
   const MINUTES = SECONDS * 60;
@@ -42,7 +60,7 @@ const { TIMESTAMP_END } = Astro.props;
     const $seconds = $countdown.querySelector("[data-seconds]");
     const timestamp = $countdown.getAttribute("data-date");
     if (!timestamp) return;
-    const date = new Date(+timestamp).getTime();
+    let date = new Date(+timestamp).getTime();
 
     function formatTime(time: number) {
       return Math.floor(time).toString().padStart(2, "0");
@@ -50,6 +68,23 @@ const { TIMESTAMP_END } = Astro.props;
 
     function updateCountdown() {
       const now = Date.now();
+      const today = new Date();
+      if (!timestamp) return;
+      const dateEnd = new Date(+timestamp);
+      if (
+        dateEnd.getDate() < today.getDate() &&
+        dateEnd.getMonth() <= today.getMonth() &&
+        dateEnd.getFullYear() <= today.getFullYear()
+      ) {
+        date = new Date(
+          dateEnd.getFullYear() + 1,
+          dateEnd.getMonth(),
+          dateEnd.getDate(),
+          dateEnd.getHours(),
+          dateEnd.getMinutes(),
+          dateEnd.getSeconds()
+        ).getTime();
+      }
       const distance = date - now;
       if (distance < 0) {
         if (!timestamp) return;
@@ -58,14 +93,15 @@ const { TIMESTAMP_END } = Astro.props;
           $countdown.className = "hidden";
           const $itsTime = $("#its-time");
           if ($itsTime instanceof HTMLElement) {
-            $itsTime.innerHTML = `
-            <div class="flex flex-col border-1 border-gray-400 p-4 gap-4 justify-center items-center  rounded">
-            <h2 class="text-4xl text-[#D52941] font-bold text-center">🎄 ¡FELIZ NAVIDAD PARA TODOS! 🎄</h2>
-            <p class="text-center">¡El gran día ha llegado! Que esta Navidad esté llena de alegría, amor y momentos inolvidables junto a tus seres queridos.</p>
-            </div>
-            `;
+            $itsTime.className = "";
+            fireworksAnimation();
           }
         }
+      }
+      if (!$countdown) return;
+      const type = $countdown.getAttribute("data-type");
+      if (type === "christmas") {
+        snowAnimation();
       }
       if ($days instanceof HTMLElement) {
         $days.innerText = formatTime(distance / DAYS);
