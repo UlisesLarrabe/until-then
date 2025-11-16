@@ -1,23 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import "@styles/global.css";
-import Countdown from "@components/Countdown.astro";
-const CURRENT_YEAR = new Date().getFullYear();
+import Hero from "@/components/Hero.astro";
 ---
 
 <Layout>
   <main class="flex flex-col gap-2 p-2 justify-center items-center pt-40">
-    <h1 class="text-4xl font-bold mb-4 text-center bg-[#264a38] p-2">
-      ¡Hasta <span class="text-[#D52941]">Navidad</span> de {CURRENT_YEAR}!
-    </h1>
-    <p class="text-center mb-8 bg-[#264a38] p-2">Tan solo faltan...</p>
-    <div class="bg-[#264a38] p-2 rounded">
-      <Countdown
-        TIMESTAMP_END={new Date("2025-11-16T16:47:00").getTime()}
-        title="🎄 ¡FELIZ NAVIDAD PARA TODOS! 🎄"
-        subtitle="¡El gran día ha llegado! Que esta Navidad esté llena de alegría, amor y momentos inolvidables junto a tus seres queridos."
-        type="christmas"
-      />
-    </div>
+    <Hero />
   </main>
 </Layout>
