@@ -8,9 +8,7 @@ function randomInRange(min: number, max: number): number {
   return Math.random() * (max - min) + min;
 }
 
-let interval = setInterval(fireworksAnimation, 350);
-
-function fireworksAnimation() {
+function fireworksAnimation(interval: NodeJS.Timeout) {
   let timeLeft = animationEnd - Date.now();
 
   if (timeLeft <= 0) {
