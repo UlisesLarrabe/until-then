@@ -1,7 +1,7 @@
 ---
 import Countdown from "./Countdown.astro";
 const CURRENT_YEAR = new Date().getFullYear();
-let TIMESTAMP_END = new Date(`${CURRENT_YEAR}-12-25T00:00:00`).getTime();
+let DATE_END = `${CURRENT_YEAR}-12-25`;
 ---
 
 <h1 class="text-4xl font-bold mb-4 text-center bg-[#264a38] p-2">
@@ -10,7 +10,7 @@ let TIMESTAMP_END = new Date(`${CURRENT_YEAR}-12-25T00:00:00`).getTime();
 <p class="text-center mb-8 bg-[#264a38] p-2">Tan solo faltan...</p>
 <div class="bg-[#264a38] p-2 rounded">
   <Countdown
-    TIMESTAMP_END={TIMESTAMP_END}
+    DATE_END={DATE_END}
     title="🎄 ¡FELIZ NAVIDAD PARA TODOS! 🎄"
     subtitle="¡El gran día ha llegado! Que esta Navidad esté llena de alegría, amor y momentos inolvidables junto a tus seres queridos."
     type="christmas"

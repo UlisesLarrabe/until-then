@@ -1,10 +1,10 @@
 ---
 import NumberCard from "./NumberCard.astro";
-const { TIMESTAMP_END, title, subtitle, type } = Astro.props;
+const { DATE_END, title, subtitle, type } = Astro.props;
 ---
 
 <section
-  data-date={TIMESTAMP_END}
+  data-date={DATE_END}
   class="grid grid-cols-2 md:grid-cols-4 gap-2 max-w-3xl select-none hover:cursor-crosshair"
   data-type={type}
 >
@@ -59,9 +59,9 @@ const { TIMESTAMP_END, title, subtitle, type } = Astro.props;
     const $hours = $countdown.querySelector("[data-hours]");
     const $minutes = $countdown.querySelector("[data-minutes]");
     const $seconds = $countdown.querySelector("[data-seconds]");
-    const timestamp = $countdown.getAttribute("data-date");
-    if (!timestamp) return;
-    let date = new Date(+timestamp).getTime();
+    const targetDate = $countdown.getAttribute("data-date");
+    if (!targetDate) return;
+    let date = new Date(targetDate + "T00:00:00").getTime();
 
     function formatTime(time: number) {
       return Math.floor(time).toString().padStart(2, "0");
@@ -70,8 +70,8 @@ const { TIMESTAMP_END, title, subtitle, type } = Astro.props;
     function updateCountdown() {
       const now = Date.now();
       const today = new Date();
-      if (!timestamp) return;
-      const dateEnd = new Date(+timestamp);
+      if (!targetDate) return;
+      const dateEnd = new Date(targetDate + "T00:00:00");
       if (
         dateEnd.getDate() < today.getDate() &&
         dateEnd.getMonth() <= today.getMonth() &&
@@ -88,8 +88,8 @@ const { TIMESTAMP_END, title, subtitle, type } = Astro.props;
       }
       const distance = date - now;
       if (distance < 0) {
-        if (!timestamp) return;
-        const dateEnd = new Date(+timestamp);
+        if (!targetDate) return;
+        const dateEnd = new Date(targetDate + "T00:00:00");
         if (dateEnd.getDate() == new Date().getDate() && $countdown) {
           $countdown.className = "hidden";
           const $itsTime = $("#its-time");
