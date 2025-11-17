@@ -2,10 +2,27 @@
 import Layout from "@layouts/Layout.astro";
 import "@styles/global.css";
 import Hero from "@/components/Hero.astro";
+import SnowBadge from "@/components/snowBadge.astro";
 ---
 
 <Layout>
-  <main class="flex flex-col gap-2 p-2 justify-center items-center pt-40">
+  <main
+    class="flex flex-col gap-2 p-2 justify-start items-center pt-40 h-full absolute w-full"
+    id="main-hero"
+  >
     <Hero />
+    <SnowBadge />
   </main>
 </Layout>
+
+<script>
+  import { snowAnimation } from "@/utils/snowAnimation";
+  const $hero = document.getElementById("main-hero");
+  if ($hero) {
+    $hero.addEventListener("click", () => {
+      snowAnimation();
+      snowAnimation();
+      snowAnimation();
+    });
+  }
+</script>
