@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+  --color-green-christmas: #264a38;
+  --color-red-christmas: #d52941;
+  --color-white-christmas: #faf5f3;
+}
