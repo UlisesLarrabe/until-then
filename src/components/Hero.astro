@@ -4,11 +4,12 @@ const CURRENT_YEAR = new Date().getFullYear();
 let DATE_END = `${CURRENT_YEAR}-12-25`;
 ---
 
-<h1 class="text-4xl font-bold mb-4 text-center bg-[#264a38] p-2 select-none">
-  ¡Hasta <span class="text-[#D52941]">Navidad</span> de <span id="year"></span>!
+<h1 class="text-4xl font-bold mb-4 text-center bg-green-christmas p-2">
+  ¡Hasta <span class="text-red-christmas">Navidad</span> de <span id="year"
+  ></span>!
 </h1>
-<p class="text-center mb-8 bg-[#264a38] p-2 select-none">Tan solo faltan...</p>
-<div class="bg-[#264a38] p-2 rounded">
+<p class="text-center mb-8 bg-green-christmas p-2">Tan solo faltan...</p>
+<div class="bg-green-christmas p-2 rounded">
   <Countdown
     DATE_END={DATE_END}
     title="🎄 ¡FELIZ NAVIDAD PARA TODOS! 🎄"
