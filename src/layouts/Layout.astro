@@ -1,13 +1,22 @@
 ---
 import Analytics from "@vercel/analytics/astro";
+
 const props = Astro.props || {};
 const title = props.title ?? "Cuenta atrás para Navidad 🎄";
 const description =
   props.description ??
   "¿Cuántos DÍAS Faltan para NAVIDAD? ¡Sigue la cuenta atrás hasta Nochebuena y prepárate para las festividades!";
-const image = props.image ?? "/og-image.png";
-const canonical = props.canonical ?? Astro.site ?? "";
+const image = props.image ?? "/favicon.svg";
+const canonical = props.canonical ?? Astro.site?.href ?? "";
 const lang = props.lang ?? "es-ES";
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description: description,
+  image: image,
+  url: canonical,
+});
 ---
 
 <!doctype html>
@@ -19,6 +28,7 @@ const lang = props.lang ?? "es-ES";
 
     <title>{title}</title>
     <meta name="description" content={description} />
+
     <meta
       name="keywords"
       content="cuenta atrás, navidad, christmas countdown, calendario, cuenta regresiva, Nochebuena, festivo, vacaciones, diciembre, festividades, falta para navidad, días para navidad, contador regresivo, cuanta falta para navidad, cuando, cuando es, cuando es navidad, cuando navidad, que dia, dia, es, que dia es navidad, cuanto falta, cuanto falta para navidad, cuanto, falta, para, navidad, hasta, cuanto falta hasta navidad, cuanto falta hasta navidad, faltan, faltan dias para navidad, faltan dias, faltan dias navidad, faltan dias para, faltan dias para navidad, 2025, diciembre 2025, navidad 2025, cuanto falta para navidad 2025, cuenta atras navidad 2025, cuenta regresiva navidad 2025, navidad 2025 cuenta atras, navidad 2025 cuenta regresiva, navidad 2025 cuanto falta, navidad 2025 cuando es, navidad 2025 que dia es, navidad 2025 cuantos dias faltan, navidad 2025 cuantos dias, navidad 2025 cuantos dias para, navidad 2025 cuantos dias para navidad, navidad 2025 hasta cuando, navidad 2025 hasta que dia, navidad 2025 hasta que fecha, navidad 2025 hasta cuando es"
@@ -26,7 +36,6 @@ const lang = props.lang ?? "es-ES";
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#264a38" />
 
-    <!-- Open Graph -->
     <meta property="og:locale" content={lang} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -34,6 +43,8 @@ const lang = props.lang ?? "es-ES";
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={image} />
     <meta property="og:image:alt" content="Cuenta atrás para Navidad" />
+
+    <script type="application/ld+json" set:html={schema} />
   </head>
   <body>
     <slot />
