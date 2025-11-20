@@ -1,10 +1,10 @@
 ---
 import Analytics from "@vercel/analytics/astro";
 const props = Astro.props || {};
-const title = props.title ?? "Cuenta atrás para Navidad — faltaparanavidad";
+const title = props.title ?? "Cuenta atrás para Navidad 🎄";
 const description =
   props.description ??
-  "¿Cuánto falta para Navidad? ¡Sigue la cuenta atrás hasta Nochebuena y prepárate para las festividades!";
+  "¿Cuántos DÍAS Faltan para NAVIDAD? ¡Sigue la cuenta atrás hasta Nochebuena y prepárate para las festividades!";
 const image = props.image ?? "/og-image.png";
 const canonical = props.canonical ?? Astro.site ?? "";
 const lang = props.lang ?? "es-ES";
@@ -16,7 +16,6 @@ const lang = props.lang ?? "es-ES";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -24,6 +23,7 @@ const lang = props.lang ?? "es-ES";
       name="keywords"
       content="cuenta atrás, navidad, christmas countdown, calendario, cuenta regresiva, Nochebuena, festivo, vacaciones, diciembre, festividades, falta para navidad, días para navidad, contador regresivo, cuanta falta para navidad, cuando, cuando es, cuando es navidad, cuando navidad, que dia, dia, es, que dia es navidad, cuanto falta, cuanto falta para navidad, cuanto, falta, para, navidad, hasta, cuanto falta hasta navidad, cuanto falta hasta navidad, faltan, faltan dias para navidad, faltan dias, faltan dias navidad, faltan dias para, faltan dias para navidad, 2025, diciembre 2025, navidad 2025, cuanto falta para navidad 2025, cuenta atras navidad 2025, cuenta regresiva navidad 2025, navidad 2025 cuenta atras, navidad 2025 cuenta regresiva"
     />
+    <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#264a38" />
 
