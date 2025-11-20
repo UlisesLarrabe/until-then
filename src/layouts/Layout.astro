@@ -1,4 +1,5 @@
 ---
+import Analytics from "@vercel/analytics/astro";
 const props = Astro.props || {};
 const title = props.title ?? "Cuenta atrás para Navidad — faltaparanavidad";
 const description =
@@ -36,6 +37,7 @@ const lang = props.lang ?? "es-ES";
     <meta property="og:image:alt" content="Cuenta atrás para Navidad" />
   </head>
   <body>
+    <Analytics />
     <slot />
   </body>
 </html>
