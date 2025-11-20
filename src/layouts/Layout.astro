@@ -36,9 +36,11 @@ const lang = props.lang ?? "es-ES";
     <meta property="og:image" content={image} />
     <meta property="og:image:alt" content="Cuenta atrás para Navidad" />
   </head>
-  <Analytics />
   <body>
     <slot />
+    <div class="hidden">
+      <Analytics />
+    </div>
   </body>
 
   <style>
@@ -54,5 +56,4 @@ const lang = props.lang ?? "es-ES";
       gap: 2.5rem;
     }
   </style>
-
 </html>
