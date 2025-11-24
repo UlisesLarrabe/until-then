@@ -1,6 +1,6 @@
 import confetti from "canvas-confetti";
 
-let duration = 5 * 1000;
+let duration = 2 * 1000;
 let animationEnd = Date.now() + duration;
 let skew = 1;
 
