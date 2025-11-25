@@ -1,0 +1,15 @@
+---
+const { title, description, number } = Astro.props;
+---
+
+<article
+  class="p-4 border rounded-xl bg-green-christmas md:w-96 flex gap-4 color-white-christmas cursor-crosshair"
+>
+  <span class="p-2 bg-red-christmas rounded-xl h-10 w-20 text-center font-bold"
+    >{number}</span
+  >
+  <div>
+    <h2 class="text-2xl font-bold">{title}</h2>
+    <p class="text-wrap">{description}</p>
+  </div>
+</article>
