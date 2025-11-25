@@ -3,24 +3,32 @@ import Layout from "@layouts/Layout.astro";
 import "@styles/global.css";
 import Hero from "@/components/Hero.astro";
 import SnowBadge from "@/components/SnowBadge.astro";
+import MoreInfo from "@/components/MoreInfo.astro";
+import FAQ from "@/components/FAQ.astro";
 ---
 
 <Layout>
-  <div class="w-full h-11 bg-[#fef9ef] flex gap-10">
-    <aside class="h-full bg-red-christmas w-1/10 z-99 gift"></aside>
-    <div class="w-9/10 bg-red-christmas gift"></div>
+  <div class="min-h-dvh w-full flex flex-col gap-10 h-full">
+    <div class="w-full h-11 bg-[#fef9ef] flex gap-10">
+      <aside class="h-full bg-red-christmas w-1/10 z-99 gift"></aside>
+      <div class="w-9/10 bg-red-christmas gift"></div>
+    </div>
+    <div class="flex gap-10 h-full w-full">
+      <aside
+        class="h-full bg-red-christmas md:w-1/10 md:block hidden z-99 gift"
+      >
+      </aside>
+      <main
+        class="md:w-9/10 w-full flex flex-col gap-2 p-2 justify-start items-center md:pt-40 h-full"
+        id="main-hero"
+      >
+        <Hero />
+        <SnowBadge />
+      </main>
+    </div>
   </div>
-  <div class="flex gap-10 h-full w-full">
-    <aside class="h-full bg-red-christmas md:w-1/10 md:block hidden z-99 gift">
-    </aside>
-    <main
-      class="md:w-9/10 w-full flex flex-col gap-2 p-2 justify-start items-center md:pt-40 h-full"
-      id="main-hero"
-    >
-      <Hero />
-      <SnowBadge />
-    </main>
-  </div>
+  <MoreInfo />
+  <FAQ />
 </Layout>
 
 <style>
