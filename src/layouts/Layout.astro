@@ -4,10 +4,10 @@ import Analytics from "@vercel/analytics/astro";
 const props = Astro.props || {};
 const title =
   props.title ??
-  "🎄¿Cuantos días faltan para navidad?🎄 Cuenta atrás hasta Navidad 2025";
+  "> 🎄¿Cuantos días faltan para navidad?🎄 Cuenta atrás hasta Navidad 2025";
 const description =
   props.description ??
-  "> ¿Cuántos Días Faltan para NAVIDAD 2025? ¡Sigue la cuenta atrás hasta Nochebuena y prepárate para las festividades!";
+  "¿Cuántos Días Faltan para NAVIDAD 2025? ¡Sigue la cuenta atrás hasta Nochebuena y prepárate para las festividades!";
 const image = props.image ?? "/favicon.svg";
 const canonical = props.canonical ?? Astro.site?.href ?? "";
 const lang = props.lang ?? "es-ES";
