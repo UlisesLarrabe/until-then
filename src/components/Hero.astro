@@ -1,16 +1,19 @@
 ---
+import { getI18N } from "@/i18n";
 import Countdown from "./Countdown.astro";
 const CURRENT_YEAR = new Date().getFullYear();
 let DATE_END = `${CURRENT_YEAR}-12-25`;
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<h1 class="text-4xl font-bold mb-4 text-center bg-green-christmas p-2">
-  ¿Cuántos días faltan para <span class="bg-red-christmas pd:p-2 p-1 rounded-xl"
-    >Navidad</span
-  > de
-  <span id="year"></span>?
-</h1>
-<p class="text-center mb-8 bg-green-christmas p-2">Tan solo faltan...</p>
+<h1
+  class="text-4xl font-bold mb-4 text-center bg-green-christmas p-2"
+  set:html={i18n.components.hero.heading}
+/>
+<p class="text-center mb-8 bg-green-christmas p-2">
+  {i18n.components.hero.subheading}
+</p>
 <div class="bg-green-christmas p-2 rounded">
   <Countdown
     DATE_END={DATE_END}

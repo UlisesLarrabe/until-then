@@ -1,8 +1,15 @@
+---
+import { getI18N } from "@/i18n";
+
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
 <aside class="right-2 bottom-12 z-50 absolute">
   <div
     class="p-2 w-80 h-10 bg-transparent absolute rounded-lg text-center text-white text-sm font-semibold shadow-lg select-none right-0 border border-white/30"
   >
-    <p class="md:block hidden">Click en la pantalla para generar más nieve!</p>
-    <p class="md:hidden block">Toca en la pantalla para generar más nieve!</p>
+    <p class="md:block hidden">{i18n.components.snowBadge.desktop}</p>
+    <p class="md:hidden block">{i18n.components.snowBadge.mobile}</p>
   </div>
 </aside>

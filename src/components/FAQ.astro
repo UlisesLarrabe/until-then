@@ -1,5 +1,8 @@
 ---
 import FAQCard from "./FAQCard.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <section class="h-[5000px] w-full flex gap-10 relative">
@@ -10,43 +13,19 @@ import FAQCard from "./FAQCard.astro";
       <h2
         class="text-3xl p-2 bg-green-christmas font-bold color-white-christmas"
       >
-        Preguntas frecuentes sobre Navidad 2025
+        {i18n.components.faq.title}
       </h2>
       <p class="p-2 bg-green-christmas color-white-christmas">
-        Todo lo que necesitas saber para aprovechar al máximo la Navidad del
-        2025.
+        {i18n.components.faq.description}
       </p>
     </div>
 
     <div class="w-2/3">
-      <FAQCard
-        title="¿Cuándo es Navidad en 2025?"
-        content="Navidad en 2025 se celebra el 25 de diciembre."
-      />
-      <FAQCard
-        title="¿Qué día se arma el árbol de Navidad?"
-        content="El árbol de Navidad generalmente se arma el 8 de diciembre, coincidiendo con la festividad de la Inmaculada Concepción, aunque algunas familias prefieren hacerlo a principios de diciembre o incluso más cerca de Navidad."
-      />
-      <FAQCard
-        title="¿Por qué es importante la Navidad?"
-        content="La Navidad es una festividad que celebra el nacimiento de Jesucristo y es una época para compartir con familiares y amigos, así como para reflexionar sobre valores como la generosidad y la esperanza."
-      />
-      <FAQCard
-        title="¿Cuántos días faltan para Navidad 2025?"
-        content="La cantidad de días que faltan para Navidad 2025 depende de la fecha actual. Puedes usar nuestra cuenta atrás para saberlo al instante."
-      />
-      <FAQCard
-        title="¿Qué tradiciones navideñas son populares en 2025?"
-        content="En 2025, las tradiciones navideñas incluyen decorar el árbol de Navidad, intercambiar regalos, cantar villancicos y compartir comidas festivas con familiares y amigos."
-      />
-      <FAQCard
-        title="¿Cuáles son los mejores regalos para la navidad 2025?"
-        content="Los mejores regalos en Navidad son aquellos que reflejan los intereses y necesidades de la persona. Considera experiencias, libros, tecnología, productos de bienestar, o simplemente tu tiempo y atención. En Navidad, recordar los detalles especiales de cada persona es lo que importa."
-      />
-      <FAQCard
-        title="¿Cuál es el significado de la Navidad?"
-        content="La Navidad es una celebración de unión, familia y generosidad. Más allá de las compras y decoraciones, la Navidad representa el tiempo para conectar con nuestros seres queridos, reflexionar sobre el año y renovar nuestras esperanzas para el futuro."
-      />
+      {
+        i18n.components.faq.items.map((card) => (
+          <FAQCard title={card.title} content={card.content} />
+        ))
+      }
     </div>
   </div>
 </section>

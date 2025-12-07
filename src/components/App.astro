@@ -1,0 +1,74 @@
+---
+import Layout from "@layouts/Layout.astro";
+import "@styles/global.css";
+import Hero from "@/components/Hero.astro";
+import SnowBadge from "@/components/SnowBadge.astro";
+import MoreInfo from "@/components/MoreInfo.astro";
+import FAQ from "@/components/FAQ.astro";
+import { getI18N } from "@i18n/index";
+
+
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout
+  title={i18n.seo.title}
+  description={i18n.seo.description}
+  lang={currentLocale}
+  schema={JSON.stringify(i18n.seo.schemaWebPage)}
+  questionsSchema={i18n.seo.schemaFAQ}
+  keywords={i18n.seo.keywords}
+>
+  <div class="min-h-dvh w-full flex flex-col gap-10 h-full">
+    <div class="w-full h-11 bg-[#fef9ef] flex gap-10">
+      <aside class="h-full bg-red-christmas w-1/10 z-99 gift p-2"></aside>
+      <div class="w-9/10 bg-red-christmas gift flex justify-end">
+        <header >
+          <select class="p-2 rounded-lg shadow-sm" onchange="location = this.value;">
+            <option value="/" class="w-full h-10" selected={currentLocale === "es"}>  🇦🇷 ES
+            </option>
+            <option value="/en" selected={currentLocale === "en"}>  🇺🇸 EN</option>
+          </select>
+        </header>
+      </div>
+    </div>
+    <div class="flex gap-10 h-full w-full">
+      <aside
+        class="h-full bg-red-christmas md:w-1/10 md:block hidden z-99 gift"
+      >
+      </aside>
+      <main
+        class="md:w-9/10 w-full flex flex-col gap-2 p-2 justify-start items-center md:pt-40 h-full"
+        id="main-hero"
+      >
+        <Hero />
+        <SnowBadge />
+      </main>
+    </div>
+  </div>
+  <MoreInfo />
+  <FAQ />
+</Layout>
+
+<style>
+  .gift {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='%23b3b3b3' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M5 3.59L1.46.05.05 1.46 3.59 5 .05 8.54l1.41 1.41L5 6.41l3.54 3.54 1.41-1.41L6.41 5l3.54-3.54L8.54.05 5 3.59zM17 2h24v2H17V2zm0 4h24v2H17V6zM2 17h2v24H2V17zm4 0h2v24H6V17z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  #main-hero {
+    background-color: #264a38;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b6b4b9' fill-opacity='0.18'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+</style>
+
+<script>
+  import { snowAnimation } from "@/utils/snowAnimation";
+  const $hero = document.getElementById("main-hero");
+  if ($hero) {
+    $hero.addEventListener("click", () => {
+      snowAnimation();
+      snowAnimation();
+      snowAnimation();
+    });
+  }
+</script>

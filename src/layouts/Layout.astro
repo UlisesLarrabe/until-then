@@ -11,14 +11,82 @@ const description =
 const image = props.image ?? "/favicon.svg?v=2";
 const canonical = props.canonical ?? Astro.site?.href ?? "";
 const lang = props.lang ?? "es-ES";
-const schema = JSON.stringify({
+const schema =
+  props.schema ??
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description: description,
+    image: image,
+    url: canonical,
+  });
+const questionsSchema = props.questionsSchema ?? {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: title,
-  description: description,
-  image: image,
-  url: canonical,
-});
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuándo es Navidad en 2025?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Navidad en 2025 se celebra el 25 de diciembre.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué día se arma el árbol de Navidad?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El árbol de Navidad generalmente se arma el 8 de diciembre, coincidiendo con la festividad de la Inmaculada Concepción, aunque algunas familias prefieren hacerlo a principios de diciembre o incluso más cerca de Navidad.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Por qué es importante la Navidad?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La Navidad es una festividad que celebra el nacimiento de Jesucristo y es una época para compartir con familiares y amigos, así como para reflexionar sobre valores como la generosidad y la esperanza.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuántos días faltan para Navidad 2025?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La cantidad de días que faltan para Navidad 2025 depende de la fecha actual. Puedes usar nuestra cuenta atrás para saberlo al instante.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué tradiciones navideñas son populares en 2025?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "En 2025, las tradiciones navideñas incluyen decorar el árbol de Navidad, intercambiar regalos, cantar villancicos y compartir comidas festivas con familiares y amigos.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuáles son los mejores regalos para la navidad 2025?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los mejores regalos en Navidad son aquellos que reflejan los intereses y necesidades de la persona. Considera experiencias, libros, tecnología, productos de bienestar, o simplemente tu tiempo y atención. En Navidad, recordar los detalles especiales de cada persona es lo que importa.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuál es el significado de la Navidad?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La Navidad es una celebración de unión, familia y generosidad. Más allá de las compras y decoraciones, la Navidad representa el tiempo para conectar con nuestros seres queridos, reflexionar sobre el año y renovar nuestras esperanzas para el futuro.",
+      },
+    },
+  ],
+};
+
+const keywords =
+  props.keywords ??
+  "cuenta atrás, navidad, christmas countdown, calendario, cuenta regresiva, Nochebuena, festivo, vacaciones, diciembre, festividades, falta para navidad, días para navidad, contador regresivo, cuanto falta para navidad";
 ---
 
 <!doctype html>
@@ -31,10 +99,7 @@ const schema = JSON.stringify({
     <title>{title}</title>
     <meta name="description" content={description} />
 
-    <meta
-      name="keywords"
-      content="cuenta atrás, navidad, christmas countdown, calendario, cuenta regresiva, Nochebuena, festivo, vacaciones, diciembre, festividades, falta para navidad, días para navidad, contador regresivo, cuanto falta para navidad"
-    />
+    <meta name="keywords" content={keywords} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#264a38" />
 
@@ -47,70 +112,10 @@ const schema = JSON.stringify({
     <meta property="og:image:alt" content="Cuenta atrás para Navidad" />
 
     <script type="application/ld+json" set:html={schema} />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Cuándo es Navidad en 2025?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Navidad en 2025 se celebra el 25 de diciembre."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Qué día se arma el árbol de Navidad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "El árbol de Navidad generalmente se arma el 8 de diciembre, coincidiendo con la festividad de la Inmaculada Concepción, aunque algunas familias prefieren hacerlo a principios de diciembre o incluso más cerca de Navidad."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Por qué es importante la Navidad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "La Navidad es una festividad que celebra el nacimiento de Jesucristo y es una época para compartir con familiares y amigos, así como para reflexionar sobre valores como la generosidad y la esperanza."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuántos días faltan para Navidad 2025?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "La cantidad de días que faltan para Navidad 2025 depende de la fecha actual. Puedes usar nuestra cuenta atrás para saberlo al instante."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Qué tradiciones navideñas son populares en 2025?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "En 2025, las tradiciones navideñas incluyen decorar el árbol de Navidad, intercambiar regalos, cantar villancicos y compartir comidas festivas con familiares y amigos."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuáles son los mejores regalos para la navidad 2025?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Los mejores regalos en Navidad son aquellos que reflejan los intereses y necesidades de la persona. Considera experiencias, libros, tecnología, productos de bienestar, o simplemente tu tiempo y atención. En Navidad, recordar los detalles especiales de cada persona es lo que importa."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuál es el significado de la Navidad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "La Navidad es una celebración de unión, familia y generosidad. Más allá de las compras y decoraciones, la Navidad representa el tiempo para conectar con nuestros seres queridos, reflexionar sobre el año y renovar nuestras esperanzas para el futuro."
-            }
-          }
-        ]
-      }
-    </script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(questionsSchema)}
+    />
   </head>
   <body>
     <slot />
