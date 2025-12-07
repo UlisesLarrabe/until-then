@@ -25,7 +25,8 @@ const i18n = getI18N({ currentLocale });
       <aside class="h-full bg-red-christmas w-1/10 z-99 gift p-2"></aside>
       <div class="w-9/10 bg-red-christmas gift flex justify-end">
         <header >
-          <select class="p-2 rounded-lg shadow-sm" onchange="location = this.value;">
+          <label for="language-select" class="sr-only">Select Language</label>
+          <select id="language-select" class="p-2 rounded-lg shadow-sm" onchange="location = this.value;">
             <option value="/" class="w-full h-10" selected={currentLocale === "es"}>  🇦🇷 ES
             </option>
             <option value="/en" selected={currentLocale === "en"}>  🇺🇸 EN</option>
