@@ -1,0 +1,167 @@
+{
+  "seo": {
+    "title": "🎄¿Cuantos días faltan para navidad?🎄 Cuenta atrás hasta Navidad 2025",
+    "description": "¿Cuántos Días Faltan para NAVIDAD 2025? ¡Sigue la cuenta atrás hasta Nochebuena y prepárate para las festividades!",
+    "keywords": "cuenta atrás, navidad, christmas countdown, calendario, cuenta regresiva, Nochebuena, festivo, vacaciones, diciembre, festividades, falta para navidad, días para navidad, contador regresivo, cuanto falta para navidad",
+    "image": "/favicon.svg?v=2",
+    "canonical": "",
+    "lang": "es-ES",
+    "themeColor": "#264a38",
+    "ogImageAlt": "Cuenta atrás para Navidad",
+    "schemaWebPage": {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "🎄¿Cuantos días faltan para navidad?🎄 Cuenta atrás hasta Navidad 2025",
+      "description": "¿Cuántos Días Faltan para NAVIDAD 2025? ¡Sigue la cuenta atrás hasta Nochebuena y prepárate para las festividades!",
+      "image": "/favicon.svg?v=2",
+      "url": ""
+    },
+    "schemaFAQ": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuándo es Navidad en 2025?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Navidad en 2025 se celebra el 25 de diciembre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué día se arma el árbol de Navidad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El árbol de Navidad generalmente se arma el 8 de diciembre, coincidiendo con la festividad de la Inmaculada Concepción, aunque algunas familias prefieren hacerlo a principios de diciembre o incluso más cerca de Navidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué es importante la Navidad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La Navidad es una festividad que celebra el nacimiento de Jesucristo y es una época para compartir con familiares y amigos, así como para reflexionar sobre valores como la generosidad y la esperanza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuántos días faltan para Navidad 2025?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La cantidad de días que faltan para Navidad 2025 depende de la fecha actual. Puedes usar nuestra cuenta atrás para saberlo al instante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué tradiciones navideñas son populares en 2025?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En 2025, las tradiciones navideñas incluyen decorar el árbol de Navidad, intercambiar regalos, cantar villancicos y compartir comidas festivas con familiares y amigos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuáles son los mejores regalos para la navidad 2025?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los mejores regalos en Navidad son aquellos que reflejan los intereses y necesidades de la persona. Considera experiencias, libros, tecnología, productos de bienestar, o simplemente tu tiempo y atención. En Navidad, recordar los detalles especiales de cada persona es lo que importa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es el significado de la Navidad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La Navidad es una celebración de unión, familia y generosidad. Más allá de las compras y decoraciones, la Navidad representa el tiempo para conectar con nuestros seres queridos, reflexionar sobre el año y renovar nuestras esperanzas para el futuro."
+          }
+        }
+      ]
+    }
+  },
+  "components": {
+    "hero": {
+      "heading": "¿Cuántos días faltan para <span class='bg-red-christmas pd:p-2 p-1 rounded-xl'>Navidad</span> de <span id='year'></span>?",
+      "subheading": "Tan solo faltan...",
+      "countdownTitle": "🎄 ¡FELIZ NAVIDAD PARA TODOS! 🎄",
+      "countdownSubtitle": "¡El gran día ha llegado! Que esta Navidad esté llena de alegría, amor y momentos inolvidables junto a tus seres queridos."
+    },
+    "countdown": {
+      "labels": {
+        "days": "DÍAS",
+        "hours": "HORAS",
+        "minutes": "MINUTOS",
+        "seconds": "SEGUNDOS"
+      },
+      "nextCountdown": "La nueva cuenta regresiva para {type} comienza mañana"
+    },
+    "moreInfo": {
+      "title": "Disfruta la Navidad del 2025",
+      "description": "Consejos para disfrutar la temporada navideña de manera alegre y especial.",
+      "cards": [
+        {
+          "title": "Planifica tu navidad",
+          "description": "Aprovecha este tiempo para planificar regalos, menús y decoraciones para tu hogar en esta mágica temporada."
+        },
+        {
+          "title": "Tiempo en familia",
+          "description": "La navidad es una época para compartir momentos especiales con familiares y amigos. Organiza reuniones y celebra juntos."
+        },
+        {
+          "title": "Reflexiona y agradece",
+          "description": "Tómate un momento para reflexionar sobre el año que ha pasado y agradecer por las bendiciones recibidas."
+        },
+        {
+          "title": "Participa en actividades festivas",
+          "description": "Involúcrate en eventos comunitarios, decoraciones y tradiciones navideñas para sumergirte en el espíritu festivo."
+        },
+        {
+          "title": "Cuida de ti mismo",
+          "description": "Recuerda cuidar de tu bienestar físico y emocional durante esta temporada ajetreada. Tómate tiempo para relajarte y disfrutar."
+        },
+        {
+          "title": "Regalos Significativos",
+          "description": "No es sobre cuánto gastes, sino en el significado. Los mejores regalos en Navidad vienen del corazón."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Navidad 2025",
+      "description": "Todo lo que necesitas saber para aprovechar al máximo la Navidad del 2025.",
+      "items": [
+        {
+          "title": "¿Cuándo es Navidad en 2025?",
+          "content": "Navidad en 2025 se celebra el 25 de diciembre."
+        },
+        {
+          "title": "¿Qué día se arma el árbol de Navidad?",
+          "content": "El árbol de Navidad generalmente se arma el 8 de diciembre, coincidiendo con la festividad de la Inmaculada Concepción, aunque algunas familias prefieren hacerlo a principios de diciembre o incluso más cerca de Navidad."
+        },
+        {
+          "title": "¿Por qué es importante la Navidad?",
+          "content": "La Navidad es una festividad que celebra el nacimiento de Jesucristo y es una época para compartir con familiares y amigos, así como para reflexionar sobre valores como la generosidad y la esperanza."
+        },
+        {
+          "title": "¿Cuántos días faltan para Navidad 2025?",
+          "content": "La cantidad de días que faltan para Navidad 2025 depende de la fecha actual. Puedes usar nuestra cuenta atrás para saberlo al instante."
+        },
+        {
+          "title": "¿Qué tradiciones navideñas son populares en 2025?",
+          "content": "En 2025, las tradiciones navideñas incluyen decorar el árbol de Navidad, intercambiar regalos, cantar villancicos y compartir comidas festivas con familiares y amigos."
+        },
+        {
+          "title": "¿Cuáles son los mejores regalos para la navidad 2025?",
+          "content": "Los mejores regalos en Navidad son aquellos que reflejan los intereses y necesidades de la persona. Considera experiencias, libros, tecnología, productos de bienestar, o simplemente tu tiempo y atención. En Navidad, recordar los detalles especiales de cada persona es lo que importa."
+        },
+        {
+          "title": "¿Cuál es el significado de la Navidad?",
+          "content": "La Navidad es una celebración de unión, familia y generosidad. Más allá de las compras y decoraciones, la Navidad representa el tiempo para conectar con nuestros seres queridos, reflexionar sobre el año y renovar nuestras esperanzas para el futuro."
+        }
+      ]
+    },
+    "snowBadge": {
+      "desktop": "Click en la pantalla para generar más nieve!",
+      "mobile": "Toca en la pantalla para generar más nieve!"
+    }
+  }
+}
