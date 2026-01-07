@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "🎄How many days until Christmas?🎄 Countdown to Christmas 2025",
-    "description": "How many days until CHRISTMAS 2025? Track the countdown to Christmas Eve and get ready for the holidays!",
+    "title": "🎄How many days until Christmas?🎄 Countdown to Christmas 2026",
+    "description": "How many days until CHRISTMAS 2026? Track the countdown to Christmas Eve and get ready for the holidays!",
     "keywords": "countdown, christmas, christmas countdown, calendar, countdown timer, christmas eve, holiday, vacation, december, festivities, how long until christmas, days until christmas, countdown timer, how many days until christmas",
     "image": "/favicon.svg?v=2",
     "canonical": "",
@@ -11,8 +11,8 @@
     "schemaWebPage": {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "🎄How many days until Christmas?🎄 Countdown to Christmas 2025",
-      "description": "How many days until CHRISTMAS 2025? Track the countdown to Christmas Eve and get ready for the holidays!",
+      "name": "🎄How many days until Christmas?🎄 Countdown to Christmas 2026",
+      "description": "How many days until CHRISTMAS 2026? Track the countdown to Christmas Eve and get ready for the holidays!",
       "image": "/favicon.svg?v=2",
       "url": ""
     },
@@ -22,10 +22,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "When is Christmas in 2025?",
+          "name": "When is Christmas in 2026?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Christmas 2025 is celebrated on December 25."
+            "text": "Christmas 2026 is celebrated on December 25."
           }
         },
         {
@@ -46,15 +46,15 @@
         },
         {
           "@type": "Question",
-          "name": "How many days until Christmas 2025?",
+          "name": "How many days until Christmas 2026?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The number of days until Christmas 2025 depends on today’s date. Use our countdown to see it instantly."
+            "text": "The number of days until Christmas 2026 depends on today’s date. Use our countdown to see it instantly."
           }
         },
         {
           "@type": "Question",
-          "name": "What Christmas traditions are popular in 2025?",
+          "name": "What Christmas traditions are popular in 2026?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Popular traditions include decorating the tree, exchanging gifts, singing carols, and sharing festive meals with family and friends."
@@ -62,7 +62,7 @@
         },
         {
           "@type": "Question",
-          "name": "What are the best gifts for Christmas 2025?",
+          "name": "What are the best gifts for Christmas 2026?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The best gifts reflect each person’s interests and needs. Consider experiences, books, tech, wellness items, or simply your time and attention—remembering personal details matters most."
@@ -96,7 +96,7 @@
       "nextCountdown": "The new countdown for {type} starts tomorrow"
     },
     "moreInfo": {
-      "title": "Enjoy Christmas 2025",
+      "title": "Enjoy Christmas 2026",
       "description": "Tips to enjoy the holiday season in a cheerful and special way.",
       "cards": [
         {
@@ -126,12 +126,12 @@
       ]
     },
     "faq": {
-      "title": "Frequently asked questions about Christmas 2025",
-      "description": "Everything you need to know to make the most of Christmas 2025.",
+      "title": "Frequently asked questions about Christmas 2026",
+      "description": "Everything you need to know to make the most of Christmas 2026.",
       "items": [
         {
-          "title": "When is Christmas in 2025?",
-          "content": "Christmas 2025 is celebrated on December 25."
+          "title": "When is Christmas in 2026?",
+          "content": "Christmas 2026 is celebrated on December 25."
         },
         {
           "title": "What day do you put up the Christmas tree?",
@@ -142,15 +142,15 @@
           "content": "Christmas celebrates the birth of Jesus Christ and is a time to share with family and friends, reflecting on values like generosity and hope."
         },
         {
-          "title": "How many days until Christmas 2025?",
-          "content": "The number of days until Christmas 2025 depends on today’s date. You can use our countdown to see it instantly."
+          "title": "How many days until Christmas 2026?",
+          "content": "The number of days until Christmas 2026 depends on today’s date. You can use our countdown to see it instantly."
         },
         {
-          "title": "What Christmas traditions are popular in 2025?",
+          "title": "What Christmas traditions are popular in 2026?",
           "content": "Popular traditions include decorating the tree, exchanging gifts, singing carols, and sharing festive meals with family and friends."
         },
         {
-          "title": "What are the best gifts for Christmas 2025?",
+          "title": "What are the best gifts for Christmas 2026?",
           "content": "The best gifts reflect each person’s interests and needs. Consider experiences, books, tech, wellness items, or simply your time and attention—remembering personal details matters most."
         },
         {

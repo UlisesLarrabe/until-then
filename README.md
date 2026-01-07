@@ -76,7 +76,7 @@ pnpm dev
 import Layout from '@layouts/Layout.astro';
 ---
 <Layout
-	title="Cuenta atrás para Navidad 2025 — Until Then"
+	title="Cuenta atrás para Navidad 2026 — Until Then"
 	description="Resta días, horas, minutos y segundos hasta Navidad con animaciones festivas."
 	image="/og-image.png"
 	canonical="https://tudominio.com/"
