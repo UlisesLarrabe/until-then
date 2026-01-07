@@ -89,11 +89,7 @@ const i18n = getI18N({ currentLocale });
       const today = new Date();
       if (!targetDate) return;
       const dateEnd = new Date(targetDate + TIME);
-      if (
-        dateEnd.getDate() < today.getDate() &&
-        dateEnd.getMonth() <= today.getMonth() &&
-        dateEnd.getFullYear() <= today.getFullYear()
-      ) {
+      while (dateEnd.getFullYear() < today.getFullYear()) {
         date = new Date(
           dateEnd.getFullYear() + 1,
           dateEnd.getMonth(),
